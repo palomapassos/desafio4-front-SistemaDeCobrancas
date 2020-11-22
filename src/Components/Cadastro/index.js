@@ -46,7 +46,7 @@ export function Cadastro(props) {
 						<input name="password2" type="password" ref={register} />
 					</label>
 					<div className="botao">
-						<button>Criar conta</button>
+						<button className="submit">Criar conta</button>
 					</div>
 				</form>
 			</div>

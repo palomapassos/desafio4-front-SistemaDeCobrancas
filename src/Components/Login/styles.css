@@ -37,6 +37,7 @@ label {
 	flex-direction: column;
 	justify-content: center;
 	padding-bottom: 2em;
+	position: relative;
 }
 
 input {
@@ -55,7 +56,12 @@ u {
 	justify-content: center;
 }
 
-button {
+.visibilidadeSenha {
+	background-color: transparent;
+	border: none;
+}
+
+.submit {
 	color: white;
 	background-color: rgba(218, 1, 117, 0.35);
 	border-radius: 20px;
@@ -63,17 +69,17 @@ button {
 	font-family: "Montserrat", sans-serif;
 }
 
-button:hover,
-button:focus {
+.submit:hover,
+.submit:focus {
 	background-color: #da0175;
 }
 
-.cadastro u {
+.cadastrar u {
 	color: #da0175;
 	font-size: 1.3ch;
 }
 
-.cadastro {
+.cadastrar {
 	margin-top: 2em;
 	font-size: 1.3ch;
 }

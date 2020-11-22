@@ -15,17 +15,23 @@
 		margin-top: 3em;
 	}
 
-	button {
+	.submit {
 		min-width: 10em;
 		min-height: 3em;
 	}
 
-	.cadastro {
+	.cadastrar {
 		margin-top: 2em;
 	}
 
 	u {
 		font-size: 1ch;
+	}
+
+	.visibilidadeSenha {
+		position: absolute;
+		right: 0;
+		bottom: 2.5em;
 	}
 }
 
@@ -46,17 +52,23 @@
 		margin-top: 3em;
 	}
 
-	button {
+	.submit {
 		min-width: 10em;
 		min-height: 3em;
 	}
 
-	.cadastro {
+	.cadastrar {
 		margin-top: 2em;
 	}
 
 	u {
 		font-size: 1ch;
+	}
+
+	.visibilidadeSenha {
+		position: absolute;
+		right: 0;
+		bottom: 2.5em;
 	}
 }
 
@@ -84,17 +96,27 @@
 		margin-top: 2em;
 	}
 
-	button {
+	.submit {
 		min-width: 5em;
 		min-height: 2em;
 		font-size: 1.1ch;
 	}
 
-	.cadastro {
+	.cadastrar {
 		margin-top: 1em;
 	}
 
 	u {
 		font-size: 0.8ch;
+	}
+
+	.visibilidadeSenha {
+		position: absolute;
+		right: 0;
+		bottom: 1.5em;
+	}
+
+	.visibilidadeSenha img {
+		max-width: 1.5em;
 	}
 }

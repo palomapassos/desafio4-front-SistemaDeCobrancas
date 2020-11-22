@@ -3,11 +3,14 @@ import "./styles.css";
 import "./mediaqueries.css";
 import { fazerOutrasRequisicoes } from "../Utils/requisicoes.js";
 import logo from "../Assets/cubosLogo.svg";
+import senhaVisivel from "../Assets/senhaVisivel.svg";
+import senhaNaoVisivel from "../Assets/senhaNaoVisivel.svg";
 import { useForm } from "react-hook-form";
 
 export function Login(props) {
 	const { register, handleSubmit } = useForm();
 	const [token, setToken] = React.useState(null);
+	const [estadoSenha, setEstadoSenha] = React.useState(false);
 
 	return (
 		<div className="telaLogin">
@@ -49,14 +52,27 @@ export function Login(props) {
 							name="password"
 							ref={register}
 						/>
+						<button
+							type="buttom"
+							className="visibilidadeSenha"
+							onClick={(event) => {
+								event.preventDefault();
+								estadoSenha ? setEstadoSenha(false) : setEstadoSenha(true);
+							}}
+						>
+							<img
+								src={estadoSenha ? senhaVisivel : senhaNaoVisivel}
+								alt={estadoSenha ? "Esconder senha" : "Mostrar senha"}
+							/>
+						</button>
 					</label>
 					<u>Esqueci minha senha</u>
 					<div className="botao">
-						<button>Entrar</button>
+						<button className="submit">Entrar</button>
 					</div>
 				</form>
 			</div>
-			<div className="cadastro">
+			<div className="cadastrar">
 				Não tem uma conta? <u>Cadastre-se</u>
 			</div>
 		</div>
