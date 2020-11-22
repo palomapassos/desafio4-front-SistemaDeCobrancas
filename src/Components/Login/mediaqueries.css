@@ -1,0 +1,100 @@
+@media (max-width: 4000px) {
+	form {
+		margin-top: 4em;
+	}
+
+	label {
+		min-width: 20em;
+	}
+
+	input {
+		padding: 0.5em;
+	}
+
+	.botao {
+		margin-top: 3em;
+	}
+
+	button {
+		min-width: 10em;
+		min-height: 3em;
+	}
+
+	.cadastro {
+		margin-top: 2em;
+	}
+
+	u {
+		font-size: 1ch;
+	}
+}
+
+@media (max-width: 450px) {
+	form {
+		margin-top: 4em;
+	}
+
+	label {
+		min-width: 15em;
+	}
+
+	input {
+		padding: 0.5em;
+	}
+
+	.botao {
+		margin-top: 3em;
+	}
+
+	button {
+		min-width: 10em;
+		min-height: 3em;
+	}
+
+	.cadastro {
+		margin-top: 2em;
+	}
+
+	u {
+		font-size: 1ch;
+	}
+}
+
+@media (max-width: 300px) {
+	img {
+		max-width: 6em;
+		max-height: 6em;
+	}
+
+	form {
+		margin-top: 1.5em;
+	}
+
+	label {
+		min-width: 15em;
+		font-size: 1ch;
+	}
+
+	input {
+		padding: 0.025em;
+		font-size: 1.5ch;
+	}
+
+	.botao {
+		margin-top: 2em;
+	}
+
+	button {
+		min-width: 5em;
+		min-height: 2em;
+		font-size: 1.1ch;
+	}
+
+	.cadastro {
+		margin-top: 1em;
+	}
+
+	u {
+		font-size: 0.8ch;
+	}
+}
