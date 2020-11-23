@@ -1,17 +1,17 @@
 import React from "react";
 import "./styles.css";
 import "./mediaqueries.css";
-import { fazerOutrasRequisicoes } from "../Utils/requisicoes.js";
 import logo from "../Assets/cubosLogo.svg";
 import senhaVisivel from "../Assets/senhaVisivel.svg";
 import senhaNaoVisivel from "../Assets/senhaNaoVisivel.svg";
 import { useForm } from "react-hook-form";
+import { LoginContainer } from "../../App";
 
 export function Login(props) {
 	const { register, handleSubmit } = useForm();
-	const [token, setToken] = React.useState(null);
-	const [estadoSenha, setEstadoSenha] = React.useState(false);
+	const [inputSenha, setInputSenha] = React.useState(null);
 
+	const { login } = LoginContainer.useContainer();
 	return (
 		<div className="telaLogin">
 			<div className="login">
@@ -19,20 +19,7 @@ export function Login(props) {
 				<form
 					onSubmit={handleSubmit((data) => {
 						console.log(data);
-						const email = data.email;
-						const senha = data.password;
-						fazerOutrasRequisicoes(
-							"https://back-teste-brasileirao.herokuapp.com/auth",
-							"POST",
-							{
-								email,
-								senha,
-							}
-						).then(({ dados }) => {
-							dados.token
-								? setToken(dados.token)
-								: alert("Email ou senha incorretos");
-						});
+						login(data.email, data.senha);
 					})}
 				>
 					<label>
@@ -49,20 +36,21 @@ export function Login(props) {
 						<input
 							placeholder="minhasenha"
 							type="password"
-							name="password"
+							name="senha"
 							ref={register}
+							onInput={(event) => setInputSenha(event.target.value)}
 						/>
 						<button
 							type="buttom"
 							className="visibilidadeSenha"
 							onClick={(event) => {
 								event.preventDefault();
-								estadoSenha ? setEstadoSenha(false) : setEstadoSenha(true);
+								inputSenha ? setInputSenha(null) : setInputSenha(inputSenha);
 							}}
 						>
 							<img
-								src={estadoSenha ? senhaVisivel : senhaNaoVisivel}
-								alt={estadoSenha ? "Esconder senha" : "Mostrar senha"}
+								src={inputSenha ? senhaVisivel : senhaNaoVisivel}
+								alt={inputSenha ? "Esconder senha" : "Mostrar senha"}
 							/>
 						</button>
 					</label>
