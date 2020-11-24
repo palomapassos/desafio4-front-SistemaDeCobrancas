@@ -6,10 +6,11 @@ import senhaVisivel from "../Assets/senhaVisivel.svg";
 import senhaNaoVisivel from "../Assets/senhaNaoVisivel.svg";
 import { useForm } from "react-hook-form";
 import { LoginContainer } from "../../App";
+import { Link } from "react-router-dom";
 
 export function Login(props) {
 	const { register, handleSubmit } = useForm();
-	const [inputSenha, setInputSenha] = React.useState(null);
+	const [inputSenha, setInputSenha] = React.useState(false);
 
 	const { login } = LoginContainer.useContainer();
 	return (
@@ -35,21 +36,21 @@ export function Login(props) {
 						Senha
 						<input
 							placeholder="minhasenha"
-							type="password"
+							type={inputSenha ? "password" : "text"}
 							name="senha"
 							ref={register}
-							onInput={(event) => setInputSenha(event.target.value)}
+							onInput={() => setInputSenha(true)}
 						/>
 						<button
 							type="buttom"
 							className="visibilidadeSenha"
 							onClick={(event) => {
 								event.preventDefault();
-								inputSenha ? setInputSenha(null) : setInputSenha(inputSenha);
+								setInputSenha(!inputSenha);
 							}}
 						>
 							<img
-								src={inputSenha ? senhaVisivel : senhaNaoVisivel}
+								src={inputSenha ? senhaNaoVisivel : senhaVisivel}
 								alt={inputSenha ? "Esconder senha" : "Mostrar senha"}
 							/>
 						</button>
@@ -61,7 +62,10 @@ export function Login(props) {
 				</form>
 			</div>
 			<div className="cadastrar">
-				Não tem uma conta? <u>Cadastre-se</u>
+				Não tem uma conta?{" "}
+				<Link to="/cadastrar">
+					<u>Cadastre-se</u>
+				</Link>
 			</div>
 		</div>
 	);

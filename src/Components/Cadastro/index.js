@@ -4,6 +4,7 @@ import "./mediaqueries.css";
 import { fazerOutrasRequisicoes } from "../Utils/requisicoes.js";
 import logo from "../Assets/cubosLogo.svg";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 export function Cadastro(props) {
 	const { register, handleSubmit } = useForm();
@@ -51,7 +52,10 @@ export function Cadastro(props) {
 				</form>
 			</div>
 			<div className="logar">
-				Já possui uma conta?<u>Acesse agora!</u>
+				Já possui uma conta?
+				<Link to="/entrar">
+					<u>Acesse agora!</u>
+				</Link>
 			</div>
 		</div>
 	);
