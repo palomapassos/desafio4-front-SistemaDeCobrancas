@@ -1,0 +1,41 @@
+@media (max-width: 4000px) {
+	.containerMenu {
+		max-width: 260px;
+	}
+}
+
+@media (max-width: 600px) {
+	.containerMenu {
+		max-width: 150px;
+	}
+}
+
+@media (max-width: 450px) {
+	.containerMenu {
+		max-width: 75px;
+	}
+
+	.containerMenu > div {
+		margin-bottom: 22em;
+	}
+
+	.buttonCobranca {
+		padding: 0;
+		background-color: white;
+	}
+}
+
+@media (max-width: 300px) {
+	.containerMenu {
+		max-width: 50px;
+	}
+
+	.buttonCobranca {
+		padding: 0;
+		background-color: white;
+	}
+
+	.containerMenu > div {
+		margin-bottom: 18em;
+	}
+}
