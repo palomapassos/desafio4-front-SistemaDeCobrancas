@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: "Montserrat", sans-serif;
+}
+
+.containerCard {
+	display: flex;
+	flex-direction: column;
+}
+
+.cabecalhoContainer {
+	background-color: #374952;
+	border-radius: 16px 16px 0 0;
+	padding: 1em;
+	text-align: center;
+	font-weight: 600;
+	color: white;
+}
+
+.cabecalhoContainer img {
+	padding-right: 1em;
+}
+
+.bodyContainer {
+	background-color: white;
+	border-radius: 0 0 16px 16px;
+	font-weight: 600;
+}
+
+.bodyContainer > * + * {
+	margin-top: 1em;
+}

@@ -1,0 +1,41 @@
+@media (max-width: 4000px) {
+	.containerCard {
+		flex: 1 1 300px;
+	}
+
+	.bodyContainer {
+		padding: 4em 6em;
+	}
+
+	.cabecalhoContainer {
+		font-size: 1.5em;
+	}
+}
+
+@media (max-width: 450px) {
+	.containerCard {
+		flex: 1 1 50px;
+	}
+
+	.bodyContainer {
+		padding: 3em 2em;
+	}
+
+	.cabecalhoContainer {
+		font-size: 1em;
+	}
+}
+
+@media (max-width: 300px) {
+	.containerCard {
+		flex: 1 1 10px;
+	}
+
+	.bodyContainer {
+		padding: 1em 1em;
+	}
+
+	.cabecalhoContainer {
+		font-size: 1em;
+	}
+}
