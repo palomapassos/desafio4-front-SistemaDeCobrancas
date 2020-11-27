@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+.retangulo {
+	border: 2px solid;
+	border-radius: 8px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.vermelho,
+.vermelho span {
+	border-color: #ff4d4d;
+	color: #ff4d4d;
+}
+
+.verde,
+.verde span {
+	border-color: #4ec06e;
+	color: #4ec06e;
+}
+
+.azul,
+.azul span {
+	border-color: #5197b5;
+	color: #5197b5;
+}

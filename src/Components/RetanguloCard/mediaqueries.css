@@ -1,0 +1,32 @@
+@media (max-width: 4000px) {
+	.retangulo {
+		padding: 1em;
+	}
+
+	.retangulo > span + span {
+		font-size: 2em;
+		margin-left: 1em;
+	}
+}
+
+@media (max-width: 450px) {
+	.retangulo {
+		padding: 1em;
+	}
+
+	.retangulo > span + span {
+		font-size: 1em;
+		margin-left: 1em;
+	}
+}
+
+@media (max-width: 300px) {
+	.retangulo {
+		padding: 1em;
+	}
+
+	.retangulo > span + span {
+		font-size: 1em;
+		margin-left: 1em;
+	}
+}
