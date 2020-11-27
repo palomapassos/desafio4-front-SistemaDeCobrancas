@@ -1,5 +1,5 @@
 import React from "react";
-import { fazerOutrasRequisicoes } from "../Utils/requisicoes";
+import { fazerOutrasRequisicoes } from "./requisicoes";
 
 export function useLogin(estadoInicialToken = null) {
 	const [token, setToken] = React.useState(estadoInicialToken);
