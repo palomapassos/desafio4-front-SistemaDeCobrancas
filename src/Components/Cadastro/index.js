@@ -1,12 +1,12 @@
 import React from "react";
 import "./styles.css";
 import "./mediaqueries.css";
-import { fazerOutrasRequisicoes } from "../Utils/requisicoes.js";
-import logo from "../Assets/cubosLogo.svg";
+import { fazerOutrasRequisicoes } from "../../Utils/requisicoes.js";
+import logo from "../../Assets/cubosLogo.svg";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 
-export function Cadastro(props) {
+export function Cadastro() {
 	const { register, handleSubmit } = useForm();
 	return (
 		<div className="telaCadastro">
@@ -41,10 +41,6 @@ export function Cadastro(props) {
 					<label>
 						Senha
 						<input name="password1" type="password" ref={register} />
-					</label>
-					<label>
-						Confirmar senha
-						<input name="password2" type="password" ref={register} />
 					</label>
 					<div className="botao">
 						<button className="submit">Criar conta</button>

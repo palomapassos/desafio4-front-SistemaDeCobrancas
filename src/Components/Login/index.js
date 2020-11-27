@@ -1,14 +1,14 @@
 import React from "react";
 import "./styles.css";
 import "./mediaqueries.css";
-import logo from "../Assets/cubosLogo.svg";
-import senhaVisivel from "../Assets/senhaVisivel.svg";
-import senhaNaoVisivel from "../Assets/senhaNaoVisivel.svg";
+import logo from "../../Assets/cubosLogo.svg";
+import senhaVisivel from "../../Assets/senhaVisivel.svg";
+import senhaNaoVisivel from "../../Assets/senhaNaoVisivel.svg";
 import { useForm } from "react-hook-form";
 import { LoginContainer } from "../../App";
 import { Link } from "react-router-dom";
 
-export function Login(props) {
+export function Login() {
 	const { register, handleSubmit } = useForm();
 	const [inputSenha, setInputSenha] = React.useState(false);
 

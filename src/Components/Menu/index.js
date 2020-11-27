@@ -1,12 +1,12 @@
 import React from "react";
-import logo from "../Assets/Logo.svg";
-import casa from "../Assets/iconCasa.svg";
-import pessoas from "../Assets/iconPessoas.svg";
-import dinheiro from "../Assets/iconDinheiro.svg";
+import logo from "../../Assets/Logo.svg";
+import casa from "../../Assets/iconCasa.svg";
+import pessoas from "../../Assets/iconPessoas.svg";
+import dinheiro from "../../Assets/iconDinheiro.svg";
 import "./styles.css";
 import "./mediaqueries.css";
 import { Link } from "react-router-dom";
-import { useMediaQuery } from "../Utils/getMediaquery.js";
+import { useMediaQuery } from "../../Utils/getMediaquery.js";
 
 export function Menu() {
 	const menorQue450px = useMediaQuery("(max-width: 450px)");
@@ -17,15 +17,13 @@ export function Menu() {
 				{menorQue450px ? (
 					<nav>
 						<Link to="/">
-							<img src={casa} alt="home" abbr="home" />
+							<img src={casa} alt="home" />
 						</Link>
 						<Link to="/cobrancas">
-							<abbr title="cobranças">
-								<img src={dinheiro} alt="cobranças" />
-							</abbr>
+							<img src={dinheiro} alt="cobranças" />
 						</Link>
 						<Link to="/clientes">
-							<img src={pessoas} alt="clientes" abbr="clientes" />
+							<img src={pessoas} alt="clientes" />
 						</Link>
 					</nav>
 				) : (
@@ -47,16 +45,16 @@ export function Menu() {
 			</div>
 
 			{menorQue450px ? (
-				<button className="buttonCobranca" onClick={() => {}}>
+				<Link className="buttonCobranca" to="/criarcobranca">
 					<img
 						src="//s.svgbox.net/hero-outline.svg?fill=805ad5#cash"
 						alt="adicionar cobrança"
 					/>
-				</button>
+				</Link>
 			) : (
-				<button className="buttonCobranca" onClick={() => {}}>
+				<Link className="buttonCobranca" to="/criarcobranca">
 					Criar Cobrança
-				</button>
+				</Link>
 			)}
 		</div>
 	);

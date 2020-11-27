@@ -2,11 +2,10 @@ import "./App.css";
 import React from "react";
 import { Login } from "../src/Components/Login";
 import { Cadastro } from "../src/Components/Cadastro";
-import { Logout } from "../src/Components/Logout";
-import { Menu } from "../src/Components/Menu";
+import { Home } from "../src/Components/Home";
 import { createContainer } from "unstated-next";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { useLogin } from "./Components/Utils/getToken";
+import { useLogin } from "./Utils/getToken";
 
 export const LoginContainer = createContainer(useLogin);
 
@@ -22,7 +21,7 @@ function App() {
 						<Route exact path="/cadastrar" component={Cadastro} />
 						<Route exact path="/cobrancas" />
 						<Route exact path="/clientes" />
-						<Route exact path="/" />
+						<Route exact path="/" component={Home} />
 					</Switch>
 				</main>
 			</LoginContainer.Provider>

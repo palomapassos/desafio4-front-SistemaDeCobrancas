@@ -1,7 +1,7 @@
 import React from "react";
-import cifrao from "../Assets/cifrao.svg";
-import userIcon from "../Assets/user.png";
-import deslogarIcon from "../Assets/logout.svg";
+import cifrao from "../../Assets/cifrao.svg";
+import userIcon from "../../Assets/user.png";
+import deslogarIcon from "../../Assets/logout.svg";
 import { LoginContainer } from "../../App";
 import "./styles.css";
 
@@ -10,7 +10,7 @@ export function Logout(props) {
 	const { logout } = LoginContainer.useContainer();
 
 	return (
-		<div className="container">
+		<div className="containerLogout">
 			<div className="saldo">
 				<div>
 					<img src={cifrao} alt="cifrão" /> Saldo em conta
