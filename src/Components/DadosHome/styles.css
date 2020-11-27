@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: "Montserrat", sans-serif;
+	text-decoration: none;
+}
+
+.bodyHome {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 100vw;
+}
+
+.filtrosHome button {
+	border: none;
+	background-color: transparent;
+	color: #667e87;
+	font-size: 1em;
+	padding: 1em;
+}
+
+.filtrosHome .filtroPeriodo {
+	border-bottom: 2px solid #263238;
+	border-radius: 1px;
+}
+
+.filtrosHome {
+	border-bottom: 1px solid #263238;
+}
+
+.cardsHome {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 2em;
+}
+
+.cardsHome > * + * {
+	padding-left: 5em;
+}

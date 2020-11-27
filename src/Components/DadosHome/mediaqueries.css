@@ -1,0 +1,17 @@
+@media (max-width: 4000px) {
+	.bodyHome {
+		padding: 4em;
+	}
+}
+
+@media (max-width: 450px) {
+	.bodyHome {
+		padding: 2em;
+	}
+}
+
+@media (max-width: 300px) {
+	.bodyHome {
+		padding: 1em;
+	}
+}
