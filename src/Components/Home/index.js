@@ -7,10 +7,10 @@ import { DadosHome } from "../DadosHome";
 export function Home() {
 	return (
 		<div className="home">
-			<Menu></Menu>
+			<Menu />
 			<div className="areaDados">
-				<Logout></Logout>
-				<DadosHome></DadosHome>
+				<Logout />
+				<DadosHome />
 			</div>
 		</div>
 	);
