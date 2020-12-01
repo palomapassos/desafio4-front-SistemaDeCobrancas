@@ -57,6 +57,10 @@ export function ContainerCriarCobranca() {
 						Vencimento
 						<DatePicker placeholder="select date" ref={register} />
 					</label>
+					<div>
+						<button>Cancelar</button>
+						<button>Adicionar</button>
+					</div>
 				</form>
 			</div>
 		</div>
