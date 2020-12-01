@@ -1,16 +1,28 @@
-.containerFiltros {
+li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.headerTable {
+	background-color: #9dbbc3;
+	color: white;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
 	text-align: center;
+	margin: 0 3em;
+	padding: 1em;
 	border-radius: 8px;
 }
 
-.header {
-	background-color: #9dbbc3;
-	color: white;
-}
-
-.body {
+.bodyTable {
 	background-color: #ffffff;
 	color: #4c4c4c;
+	margin: 2em 3em;
+	padding: 1em;
+	border-radius: 8px;
+	text-align: center;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
 }
 
 .dadosCliente {
@@ -18,7 +30,7 @@
 	flex-direction: column;
 }
 
-table {
-	border-collapse: separate;
-	border-spacing: 0 1em;
+.buttonTable {
+	background-color: transparent;
+	border: none;
 }

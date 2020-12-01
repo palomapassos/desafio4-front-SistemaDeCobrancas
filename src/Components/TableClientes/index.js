@@ -21,44 +21,35 @@ export function TableClientes() {
 	];
 
 	return (
-		<table>
-			<thead>
-				<tr className="containerFiltros header">
-					<th>Cliente</th>
-					<th>Cobranças Feitas</th>
-					<th>Cobranças Recebidas</th>
-					<th>Status</th>
-					<th></th>
-				</tr>
-			</thead>
-			<tbody>
-				{clientes &&
-					clientes.map((cliente) => {
-						return (
-							<tr className="containerFiltros body">
-								<td>
-									<div className="dadosCliente">
-										<span>{cliente.nome}</span> <span>{cliente.email}</span>
-									</div>
-								</td>
-								<td>{cliente.cobrancasFeitas}</td>
-								<td>{cliente.cobrancasRecebidas}</td>
-								<td>
-									{cliente.estaInadimplente ? (
-										<div>Inadimplente</div>
-									) : (
-										<div>Adimplente</div>
-									)}
-								</td>
-								<td>
-									<button>
-										<img src={editar} alt="Editar Cliente" />
-									</button>
-								</td>
-							</tr>
-						);
-					})}
-			</tbody>
-		</table>
+		<div className="myTable">
+			<ul className="headerTable">
+				<li>Cliente</li>
+				<li>Cobranças Feitas</li>
+				<li>Cobranças Recebidas</li>
+				<li>Status</li>
+			</ul>
+			<ul>
+				{clientes?.map((cliente) => (
+					<li className="bodyTable">
+						<div className="dadosCliente">
+							<span>{cliente.nome}</span> <span>{cliente.email}</span>
+						</div>
+
+						<div>{cliente.cobrancasFeitas}</div>
+						<div>{cliente.cobrancasRecebidas}</div>
+
+						{cliente.estaInadimplente ? (
+							<div>Inadimplente</div>
+						) : (
+							<div>Adimplente</div>
+						)}
+
+						<button className="buttonTable">
+							<img src={editar} alt="Editar Cliente" />
+						</button>
+					</li>
+				))}
+			</ul>
+		</div>
 	);
 }
