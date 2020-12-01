@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles.css";
 import "./mediaqueries.css";
-import { fazerOutrasRequisicoes } from "../../Utils/requisicoes.js";
+import { fazerRequisicoes } from "../../Utils/requisicoes.js";
 import logo from "../../Assets/cubosLogo.svg";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
@@ -18,7 +18,7 @@ export function Cadastro() {
 						const nome = data.nome;
 						const email = data.email;
 						const senha = data.password;
-						fazerOutrasRequisicoes(
+						fazerRequisicoes(
 							"https://cubos-desafio-4.herokuapp.com/usuarios",
 							"POST",
 							{

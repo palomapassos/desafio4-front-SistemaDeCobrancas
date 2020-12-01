@@ -1,5 +1,5 @@
 import React from "react";
-import { fazerOutrasRequisicoes } from "./requisicoes";
+import { fazerRequisicoes } from "./requisicoes";
 
 export function useLogin(estadoInicialToken = null) {
 	const [token, setToken] = React.useState(estadoInicialToken);
@@ -11,7 +11,7 @@ export function useLogin(estadoInicialToken = null) {
 	}, [token]);
 
 	function login(email, senha) {
-		return fazerOutrasRequisicoes(
+		return fazerRequisicoes(
 			"https://cubos-desafio-4.herokuapp.com/auth",
 			"POST",
 			{
@@ -26,7 +26,7 @@ export function useLogin(estadoInicialToken = null) {
 	}
 
 	function logout() {
-		setToken(null);
+		return setToken(null);
 	}
 
 	return { token, login, logout };

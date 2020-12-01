@@ -3,7 +3,7 @@ import { DatePicker } from "antd";
 import { useForm } from "react-hook-form";
 import "./styles.css";
 import "antd/dist/antd.css";
-import { fazerOutrasRequisicoes } from "../../Utils/requisicoes";
+import { fazerRequisicoes } from "../../Utils/requisicoes";
 
 export function ContainerCriarCobranca() {
 	const { register, handleSubmit } = useForm();
@@ -18,7 +18,7 @@ export function ContainerCriarCobranca() {
 						const descricao = data.descricao;
 						const valor = data.valor;
 						const vencimento = data.vencimento;
-						fazerOutrasRequisicoes(
+						fazerRequisicoes(
 							"https://cubos-desafio-4.herokuapp.com/usuarios",
 							"POST",
 							{
