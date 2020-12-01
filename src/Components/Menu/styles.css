@@ -57,4 +57,7 @@ nav span {
 	border: none;
 	padding: 1em;
 	margin: 1em;
+	box-shadow: 2px 2px 32px -2px rgba(0, 0, 0, 0.34);
+	-webkit-box-shadow: 2px 2px 32px -2px rgba(0, 0, 0, 0.34);
+	-moz-box-shadow: 2px 2px 32px -2px rgba(0, 0, 0, 0.34);
 }
