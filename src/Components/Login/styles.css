@@ -6,6 +6,10 @@
 	padding: 0;
 }
 
+:focus:not(:focus-visible) {
+	outline: 0;
+}
+
 .telaLogin {
 	background-color: #f7f7f7;
 	display: flex;
@@ -63,10 +67,17 @@ u {
 
 .submit {
 	color: white;
+	cursor: pointer;
 	background-color: rgba(218, 1, 117, 0.35);
 	border-radius: 20px;
 	border: none;
 	font-family: "Montserrat", sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 2px 2px 32px -2px rgba(0, 0, 0, 0.34);
+	-webkit-box-shadow: 2px 2px 32px -2px rgba(0, 0, 0, 0.34);
+	-moz-box-shadow: 2px 2px 32px -2px rgba(0, 0, 0, 0.34);
 }
 
 .submit:hover,
