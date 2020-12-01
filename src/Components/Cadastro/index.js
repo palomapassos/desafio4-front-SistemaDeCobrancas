@@ -17,17 +17,24 @@ export function Cadastro() {
 						console.log(data);
 						const nome = data.nome;
 						const email = data.email;
-						const password = data.password1;
-						const password2 = data.password2;
-						password === password2
-							? fazerOutrasRequisicoes("", "POST", {
-									nome,
-									email,
-									password,
-							  }).then(({ dados }) => {
-									console.log(dados);
-							  })
-							: alert("Campos de senha não conferem, verifique seus dados!");
+						const senha = data.password;
+						fazerOutrasRequisicoes(
+							"https://cubos-desafio-4.herokuapp.com/usuarios",
+							"POST",
+							{
+								email,
+								senha,
+								nome,
+							}
+						)
+							.then(({ dados }) => {
+								console.log(dados);
+								alert("Usuário cadastrado");
+							})
+							.catch((err) => {
+								console.log(err);
+								alert("Algo deu errado");
+							});
 					})}
 				>
 					<label>
@@ -40,7 +47,7 @@ export function Cadastro() {
 					</label>
 					<label>
 						Senha
-						<input name="password1" type="password" ref={register} />
+						<input name="senha" type="password" ref={register} />
 					</label>
 					<div className="botao">
 						<button className="submit">Criar conta</button>
@@ -49,7 +56,7 @@ export function Cadastro() {
 			</div>
 			<div className="logar">
 				Já possui uma conta?
-				<Link to="/entrar">
+				<Link to="/login">
 					<u>Acesse agora!</u>
 				</Link>
 			</div>
