@@ -3,11 +3,13 @@ import cifrao from "../../Assets/cifrao.svg";
 import userIcon from "../../Assets/user.png";
 import deslogarIcon from "../../Assets/logout.svg";
 import { LoginContainer } from "../../App";
+import { useHistory } from "react-router-dom";
 import "./styles.css";
 
 export function Logout(props) {
 	const [deslogar, setDeslogar] = React.useState(false);
 	const { logout } = LoginContainer.useContainer();
+	const history = useHistory();
 
 	return (
 		<div className="containerLogout">
@@ -31,8 +33,9 @@ export function Logout(props) {
 					<button
 						className="deslogarPagina"
 						type="button"
-						onClick={() => {
-							logout();
+						onClick={async () => {
+							await logout();
+							history.push("/login");
 						}}
 					>
 						<img src={deslogarIcon} alt="Deseja deslogar?" />
