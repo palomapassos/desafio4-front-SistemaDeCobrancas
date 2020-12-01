@@ -1,4 +1,4 @@
-export function fazerOutrasRequisicoes(url, metodo, conteudo, token) {
+export function fazerRequisicoes(url, metodo, conteudo, token) {
 	return fetch(url, {
 		method: metodo,
 		headers: {
