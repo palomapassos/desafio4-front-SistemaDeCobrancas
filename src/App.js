@@ -4,8 +4,20 @@ import { Login } from "../src/Components/Login";
 import { Cadastro } from "../src/Components/Cadastro";
 import { Home } from "../src/Components/Home";
 import { createContainer } from "unstated-next";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { useLogin } from "./Utils/getToken";
+
+function RotaProtegida(props) {
+	const { children } = props;
+
+	const token = localStorage.getItem("token");
+
+	if (!token) {
+		return <Redirect to="/login" />;
+	}
+
+	return children;
+}
 
 export const LoginContainer = createContainer(useLogin);
 
@@ -17,11 +29,11 @@ function App() {
 			>
 				<main>
 					<Switch>
-						<Route exact path="/entrar" component={Login} />
-						<Route exact path="/cadastrar" component={Cadastro} />
-						<Route exact path="/cobrancas" />
-						<Route exact path="/clientes" />
-						<Route exact path="/" component={Home} />
+						<Route exact path="/login" component={Login} />
+						<Route exact path="/cadastro" component={Cadastro} />
+						<RotaProtegida>
+							<Route exact path="/" component={Home} />
+						</RotaProtegida>
 					</Switch>
 				</main>
 			</LoginContainer.Provider>
