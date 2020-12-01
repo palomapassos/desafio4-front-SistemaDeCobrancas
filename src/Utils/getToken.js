@@ -11,8 +11,8 @@ export function useLogin(estadoInicialToken = null) {
 	}, [token]);
 
 	function login(email, senha) {
-		fazerOutrasRequisicoes(
-			"https://back-teste-brasileirao.herokuapp.com/auth",
+		return fazerOutrasRequisicoes(
+			"https://cubos-desafio-4.herokuapp.com/auth",
 			"POST",
 			{
 				email,
