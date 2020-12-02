@@ -9,7 +9,8 @@
 
 .busca {
 	display: flex;
-	position: absolute;
+	justify-content: flex-end;
+	margin: 3em;
 }
 
 .busca input {
