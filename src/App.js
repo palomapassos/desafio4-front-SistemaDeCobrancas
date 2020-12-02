@@ -3,6 +3,8 @@ import React from "react";
 import { Login } from "../src/Components/Login";
 import { Cadastro } from "../src/Components/Cadastro";
 import { Home } from "../src/Components/Home";
+import { Cobrancas } from "../src/Components/Cobrancas";
+import { Clientes } from "../src/Components/Clientes";
 import { createContainer } from "unstated-next";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { useLogin } from "./Utils/getToken";
@@ -33,6 +35,8 @@ function App() {
 						<Route exact path="/cadastro" component={Cadastro} />
 						<RotaProtegida>
 							<Route exact path="/" component={Home} />
+							<Route exact path="/cobrancas" component={Cobrancas} />
+							<Route exact path="/clientes" component={Clientes} />
 						</RotaProtegida>
 					</Switch>
 				</main>
