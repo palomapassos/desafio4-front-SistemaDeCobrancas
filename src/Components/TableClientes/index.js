@@ -22,7 +22,7 @@ export function TableClientes() {
 
 	return (
 		<div className="myTable">
-			<ul className="headerTable">
+			<ul className="headerTableClientes">
 				<li>Cliente</li>
 				<li>Cobranças Feitas</li>
 				<li>Cobranças Recebidas</li>
@@ -30,7 +30,7 @@ export function TableClientes() {
 			</ul>
 			<ul>
 				{clientes?.map((cliente) => (
-					<li className="bodyTable">
+					<li className="bodyTableClientes">
 						<div className="dadosCliente">
 							<span>{cliente.nome}</span> <span>{cliente.email}</span>
 						</div>

@@ -3,7 +3,7 @@ li {
 	margin: 0;
 	padding: 0;
 }
-.headerTable {
+.headerTableClientes {
 	background-color: #9dbbc3;
 	color: white;
 	display: grid;
@@ -14,7 +14,7 @@ li {
 	border-radius: 8px;
 }
 
-.bodyTable {
+.bodyTableClientes {
 	background-color: #ffffff;
 	color: #4c4c4c;
 	margin: 2em 3em;
@@ -23,6 +23,12 @@ li {
 	text-align: center;
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
+}
+
+.bodyTableClientes > * {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .dadosCliente {
