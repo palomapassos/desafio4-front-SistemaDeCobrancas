@@ -1,0 +1,60 @@
+li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.headerTableCobranca {
+	background-color: #9dbbc3;
+	color: white;
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	text-align: center;
+	margin: 0 3em;
+	padding: 1em;
+	border-radius: 8px;
+}
+
+.bodyTableCobranca {
+	background-color: #ffffff;
+	color: #4c4c4c;
+	margin: 2em 3em;
+	padding: 1em;
+	border-radius: 8px;
+	text-align: center;
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+}
+
+.bodyTableCobranca > * {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.dadosCobranca {
+	display: flex;
+	flex-direction: column;
+}
+
+.buttonTable {
+	background-color: transparent;
+	border: none;
+}
+
+.status {
+	font-weight: 600;
+	font-size: 1em;
+	margin-left: 0.5em;
+}
+
+.pago {
+	color: #4ec06e;
+}
+
+.vencido {
+	color: #ff4d4d;
+}
+
+.pendente {
+	color: #5197b5;
+}
