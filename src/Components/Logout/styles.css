@@ -52,3 +52,9 @@
 .deslogarPagina > * {
 	padding: 0.5em;
 }
+
+.valorSaldo {
+	font-weight: 600;
+	font-size: 1.3em;
+	padding-left: 0.5em;
+}

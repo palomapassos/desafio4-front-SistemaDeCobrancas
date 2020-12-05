@@ -40,3 +40,13 @@ li {
 	background-color: transparent;
 	border: none;
 }
+
+.adimplente {
+	color: #4ec06e;
+	font-weight: 600;
+}
+
+.inadimplente {
+	color: #ff4d4d;
+	font-weight: 600;
+}
