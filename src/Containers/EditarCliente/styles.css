@@ -1,0 +1,8 @@
+.criarCliente {
+	display: flex;
+	background-color: #f7f7f7;
+}
+
+.criarCliente > * {
+	flex: 1 1 100vw;
+}
