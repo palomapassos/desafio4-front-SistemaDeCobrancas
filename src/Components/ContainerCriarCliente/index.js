@@ -1,23 +1,31 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import "./styles.css";
-
+import { Button } from "../Button";
+import { useHistory } from "react-router-dom";
 import { fazerRequisicoes } from "../../Utils/requisicoes";
+import { LoginContainer } from "../../App";
+import "./styles.css";
 
 export function ContainerCriarCliente() {
 	const { register, handleSubmit } = useForm();
+	const { token } = LoginContainer.useContainer();
+	const history = useHistory();
+
+	function cancelarEnvioForm() {
+		history.push("/");
+	}
 	return (
 		<div>
 			<div className="tituloPagina">// CRIAR CLIENTE</div>
 			<div className="containerCriarCliente">
 				<form
-					onSubmit={handleSubmit((data) => {
+					onSubmit={handleSubmit(async (data) => {
 						console.log(data);
-						const nome = data.cliente;
-						const cpf = data.descricao;
-						const email = data.valor;
-						const tel = data.vencimento;
-						fazerRequisicoes(
+						const nome = data.nome;
+						const cpf = data.cpf;
+						const email = data.email;
+						const tel = data.tel;
+						await fazerRequisicoes(
 							"https://cubos-desafio-4.herokuapp.com/clientes",
 							"POST",
 							{
@@ -25,7 +33,8 @@ export function ContainerCriarCliente() {
 								cpf,
 								email,
 								tel,
-							}
+							},
+							token
 						)
 							.then(({ dados }) => {
 								console.log(dados);
@@ -40,23 +49,27 @@ export function ContainerCriarCliente() {
 				>
 					<label>
 						Nome
-						<input ref={register} />
+						<input name="nome" ref={register} />
 					</label>
 					<label>
 						Email
-						<input type="email" ref={register} />
+						<input name="email" type="email" ref={register} />
 					</label>
 					<label>
 						CPF
-						<input type="cpf" ref={register} />
+						<input name="cpf" type="cpf" ref={register} />
 					</label>
 					<label>
 						Telefone
-						<input type="tel" ref={register} />
+						<input name="tel" type="tel" ref={register} />
 					</label>
-					<div>
-						<button>Cancelar</button>
-						<button>Adicionar</button>
+					<div className="botoes">
+						<Button tipo="button" classe="vazado" aoClicar={cancelarEnvioForm}>
+							Cancelar
+						</Button>
+						<Button tipo="submit" classe="preenchido">
+							Adicionar
+						</Button>
 					</div>
 				</form>
 			</div>
