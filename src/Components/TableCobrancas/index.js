@@ -4,58 +4,13 @@ import imprimir from "../../Assets/imprimir.svg";
 import togglePendente from "../../Assets/togglePendente.svg";
 import togglePago from "../../Assets/togglePago.svg";
 
-export function TableCobrancas() {
-	function getCliente(id) {
-		const clientes = [
-			{
-				id: 1,
-				nome: "nome do cliente",
-				email: "exemplo@email.com",
-				cobrancasFeitas: 120000,
-				cobrancasRecebidas: 100000,
-				estaInadimplente: true,
-			},
-			{
-				id: 2,
-				nome: "nome do cliente",
-				email: "exemplo@email.com",
-				cobrancasFeitas: 130000,
-				cobrancasRecebidas: 100000,
-				estaInadimplente: true,
-			},
-		];
-		return clientes.find((cliente) => cliente.id === id);
-	}
+export function TableCobrancas(props) {
+	const { cobrancas, clientes } = props;
 
-	const cobrancas = [
-		{
-			id: "idDaCobranca",
-			idDoCliente: 1,
-			descricao: "descrição da cobrança",
-			valor: 120000,
-			vencimento: "data_de_vencimento",
-			linkDoBoleto: "/",
-			status: "AGUARDANDO",
-		},
-		{
-			id: "idDaCobranca",
-			idDoCliente: 1,
-			descricao: "descrição da cobrança",
-			valor: 120000,
-			vencimento: "data_de_vencimento",
-			linkDoBoleto: "http://link.do.boleto",
-			status: "PAGO",
-		},
-		{
-			id: "idDaCobranca",
-			idDoCliente: 3,
-			descricao: "descrição da cobrança",
-			valor: 120000,
-			vencimento: "data_de_vencimento",
-			linkDoBoleto: "http://link.do.boleto",
-			status: "VENCIDO",
-		},
-	];
+	function getCliente(id) {
+		const resultado = clientes.find((cliente) => cliente.id === id);
+		return resultado;
+	}
 
 	return (
 		<div className="myTable">
@@ -70,9 +25,9 @@ export function TableCobrancas() {
 			<ul>
 				{cobrancas?.map((cobranca) => {
 					return (
-						<li className="bodyTableCobranca">
+						<li className="bodyTableCobranca" key={cobranca.id}>
 							<div className="dadosCobranca">
-								<span>{getCliente(cobranca.idDoCliente)?.nome ?? ""}</span>
+								<span>{getCliente(cobranca.iddocliente)?.nome ?? ""}</span>
 							</div>
 
 							<div>{cobranca.descricao}</div>
@@ -93,11 +48,17 @@ export function TableCobrancas() {
 								)}
 							</div>
 
-							<div>{cobranca.vencimento}</div>
+							<div>
+								{cobranca.vencimento
+									.split("T")[0]
+									.split("-")
+									.reverse()
+									.join("/")}
+							</div>
 
 							<a
 								className="buttonTable"
-								href={cobranca.linkDoBoleto}
+								href={cobranca.linkdoboleto}
 								rel="noreferrer noopener"
 								target="_blank"
 							>

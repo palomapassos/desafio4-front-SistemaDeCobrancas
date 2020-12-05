@@ -1,25 +1,13 @@
 import React from "react";
 import "./styles.css";
+import { useHistory } from "react-router-dom";
 import editar from "../../Assets/editar.svg";
+import { ContextoIdCliente } from "../../App";
 
-export function TableClientes() {
-	const clientes = [
-		{
-			nome: "nome do cliente",
-			email: "exemplo@email.com",
-			cobrancasFeitas: 120000,
-			cobrancasRecebidas: 100000,
-			estaInadimplente: true,
-		},
-		{
-			nome: "nome do cliente",
-			email: "exemplo@email.com",
-			cobrancasFeitas: 130000,
-			cobrancasRecebidas: 100000,
-			estaInadimplente: true,
-		},
-	];
-
+export function TableClientes(props) {
+	const { clientes } = props;
+	const history = useHistory();
+	const { setIdClienteEditar } = React.useContext(ContextoIdCliente);
 	return (
 		<div className="myTable">
 			<ul className="headerTableClientes">
@@ -30,21 +18,27 @@ export function TableClientes() {
 			</ul>
 			<ul>
 				{clientes?.map((cliente) => (
-					<li className="bodyTableClientes">
+					<li className="bodyTableClientes" key={cliente.id}>
 						<div className="dadosCliente">
 							<span>{cliente.nome}</span> <span>{cliente.email}</span>
 						</div>
 
-						<div>{cliente.cobrancasFeitas}</div>
-						<div>{cliente.cobrancasRecebidas}</div>
+						<div>{cliente.cobrancas_pago}</div>
+						<div>{cliente.cobrancas_total}</div>
 
-						{cliente.estaInadimplente ? (
-							<div>Inadimplente</div>
+						{cliente.inadimplente ? (
+							<div className="inadimplente">INADIMPLENTE</div>
 						) : (
-							<div>Adimplente</div>
+							<div className="adimplente">ADIMPLENTE</div>
 						)}
 
-						<button className="buttonTable">
+						<button
+							className="buttonTable"
+							onClick={() => {
+								history.push("/editarCliente");
+								setIdClienteEditar(cliente.id);
+							}}
+						>
 							<img src={editar} alt="Editar Cliente" />
 						</button>
 					</li>
