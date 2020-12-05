@@ -76,7 +76,6 @@ export function Cobrancas() {
 			.then(({ dados }) => {
 				console.log(dados.clientes);
 				setClientes(dados.clientes);
-				setTotalDePaginas(dados.totalDePaginas);
 			})
 			.catch((err) => {
 				console.log(err);
