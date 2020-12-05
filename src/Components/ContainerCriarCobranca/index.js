@@ -1,32 +1,56 @@
 import React from "react";
-import { DatePicker } from "antd";
 import { useForm } from "react-hook-form";
+import { Button } from "../Button";
 import "./styles.css";
 import "antd/dist/antd.css";
+import cobranca from "../../Assets/cobranca.svg";
+import { useHistory } from "react-router-dom";
 import { fazerRequisicoes } from "../../Utils/requisicoes";
+import { LoginContainer } from "../../App";
 
 export function ContainerCriarCobranca() {
 	const { register, handleSubmit } = useForm();
+	const history = useHistory();
+	const { token } = LoginContainer.useContainer();
+	const [clientes, setClientes] = React.useState([]);
+
+	React.useEffect(() => {
+		fazerRequisicoes(
+			"https://cubos-desafio-4.herokuapp.com/clientes?clientesPorPagina=100&offset=0",
+			"GET",
+			undefined,
+			token
+		).then(({ dados }) => {
+			console.log(dados);
+			setClientes(dados.clientes);
+		});
+	}, []);
+
+	function cancelarEnvioForm() {
+		history.push("/");
+	}
+
 	return (
 		<div>
 			<div className="tituloPagina">// CRIAR COBRANÇA</div>
 			<div className="containerCriarCobranca">
 				<form
-					onSubmit={handleSubmit((data) => {
+					onSubmit={handleSubmit(async (data) => {
 						console.log(data);
-						const cliente = data.cliente;
+						const idDoCliente = data.idDoCliente;
 						const descricao = data.descricao;
-						const valor = data.valor;
+						const valor = parseInt(data.valor);
 						const vencimento = data.vencimento;
-						fazerRequisicoes(
-							"https://cubos-desafio-4.herokuapp.com/usuarios",
+						await fazerRequisicoes(
+							"https://cubos-desafio-4.herokuapp.com/cobrancas",
 							"POST",
 							{
-								cliente,
+								idDoCliente,
 								descricao,
 								valor,
 								vencimento,
-							}
+							},
+							token
 						)
 							.then(({ dados }) => {
 								console.log(dados);
@@ -41,25 +65,48 @@ export function ContainerCriarCobranca() {
 				>
 					<label>
 						Cliente
-						<select ref={register}>
-							<option value=""></option>
+						<select name="idDoCliente" ref={register}>
+							<option name="idDoCliente" value=" " ref={register}></option>
+							{clientes?.map((cliente) => (
+								<option
+									name="idDoCliente"
+									value={cliente.id}
+									ref={register}
+									key={cliente.id}
+								>
+									{cliente.nome}
+								</option>
+							))}
 						</select>
 					</label>
 					<label>
 						Descrição
-						<textarea ref={register}></textarea>
+						<textarea name="descricao" ref={register}></textarea>
 					</label>
-					<label>
-						Valor
-						<input ref={register} />
-					</label>
-					<label>
-						Vencimento
-						<DatePicker placeholder="select date" ref={register} />
-					</label>
-					<div>
-						<button>Cancelar</button>
-						<button>Adicionar</button>
+					<div className="linhaContainer">
+						<label>
+							Valor
+							<img className="valorCobranca" src={cobranca} alt="R$" />
+							<input name="valor" ref={register} />
+						</label>
+						<label>
+							Vencimento
+							<input
+								type="date"
+								name="vencimento"
+								ref={register}
+								placeholder="selecionar data"
+							/>
+						</label>
+					</div>
+
+					<div className="botoes">
+						<Button tipo="button" classe="vazado" aoClicar={cancelarEnvioForm}>
+							Cancelar
+						</Button>
+						<Button tipo="submit" classe="preenchido">
+							Adicionar
+						</Button>
 					</div>
 				</form>
 			</div>
