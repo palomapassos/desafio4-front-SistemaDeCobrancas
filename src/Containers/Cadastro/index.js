@@ -36,14 +36,12 @@ export function Cadastro() {
 								if (dados.status === "sucesso") {
 									setMensagem({ type: "sucesso", mensagem: dados.message });
 								} else {
-									console.log({ dados });
 									setMensagem({ type: "erro", mensagem: dados.message });
 								}
 							})
 							.catch((err) => {
-								// console.log(err);
-								// alert("Erro", err.messagem);
-								// alert(err.message);
+								console.log({ err });
+								setMensagem({ type: "erro", mensagem: err.message });
 							});
 					})}
 				>
