@@ -20,7 +20,6 @@ export function ContainerCriarCliente() {
 			<div className="containerCriarCliente">
 				<form
 					onSubmit={handleSubmit(async (data) => {
-						console.log(data);
 						const nome = data.nome;
 						const cpf = data.cpf;
 						const email = data.email;
@@ -37,11 +36,9 @@ export function ContainerCriarCliente() {
 							token
 						)
 							.then(({ dados }) => {
-								console.log(dados);
 								alert("Cliente criado");
 							})
 							.catch((err) => {
-								console.log(err);
 								alert("Algo deu errado");
 							});
 					})}

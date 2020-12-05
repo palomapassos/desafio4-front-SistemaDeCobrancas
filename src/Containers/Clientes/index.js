@@ -35,7 +35,6 @@ export function Clientes() {
 			undefined,
 			token
 		).then(({ dados }) => {
-			console.log(dados);
 			setClientes(dados.clientes);
 			setTotalDePaginas(dados.totalDePaginas);
 		});
@@ -49,7 +48,6 @@ export function Clientes() {
 			token
 		)
 			.then(({ dados }) => {
-				console.log(dados.clientes);
 				setClientes(dados.clientes);
 				setTotalDePaginas(dados.totalDePaginas);
 			})

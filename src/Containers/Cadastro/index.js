@@ -19,7 +19,6 @@ export function Cadastro() {
 				<form
 					className="formCadastro"
 					onSubmit={handleSubmit((data) => {
-						console.log(data);
 						const nome = data.nome;
 						const email = data.email;
 						const senha = data.senha;

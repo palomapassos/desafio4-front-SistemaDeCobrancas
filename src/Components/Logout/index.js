@@ -20,7 +20,6 @@ export function Logout(props) {
 			undefined,
 			token
 		).then(({ dados }) => {
-			console.log(dados);
 			setRelatorio(dados);
 		});
 	}, []);

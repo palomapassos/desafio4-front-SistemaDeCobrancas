@@ -19,7 +19,6 @@ export function Cobrancas() {
 	] = React.useState([]);
 	const [busca, setBusca] = React.useState(false);
 	const [totalDePaginas, setTotalDePaginas] = React.useState(1);
-	console.log(cobrancas);
 
 	function fazerFiltro(valor) {
 		let result = null;
@@ -43,7 +42,6 @@ export function Cobrancas() {
 			undefined,
 			token
 		).then(({ dados }) => {
-			console.log(dados);
 			setCobrancas(dados.cobrancas);
 			setTotalDePaginas(dados.totalDePaginas);
 		});
@@ -57,7 +55,6 @@ export function Cobrancas() {
 			token
 		)
 			.then(({ dados }) => {
-				console.log(dados.cobrancas);
 				setCobrancas(dados.cobrancas);
 				setTotalDePaginas(dados.totalDePaginas);
 			})
@@ -74,7 +71,6 @@ export function Cobrancas() {
 			token
 		)
 			.then(({ dados }) => {
-				console.log(dados.clientes);
 				setClientes(dados.clientes);
 			})
 			.catch((err) => {

@@ -21,7 +21,6 @@ export function Login() {
 				<form
 					className="formLogin"
 					onSubmit={handleSubmit(async (data) => {
-						console.log(data);
 						await login(data.email, data.senha);
 						history.push("/");
 					})}

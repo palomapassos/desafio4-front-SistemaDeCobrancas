@@ -22,7 +22,6 @@ export function ContainerEditarCliente() {
 			<div className="containerEditarCliente">
 				<form
 					onSubmit={handleSubmit(async (data) => {
-						console.log(data);
 						const nome = data.nome;
 						const cpf = data.cpf;
 						const email = data.email;
@@ -41,7 +40,6 @@ export function ContainerEditarCliente() {
 							token
 						)
 							.then(({ dados }) => {
-								console.log(dados);
 								alert("Cliente criado");
 							})
 							.catch((err) => {

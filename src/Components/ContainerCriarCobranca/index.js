@@ -21,7 +21,6 @@ export function ContainerCriarCobranca() {
 			undefined,
 			token
 		).then(({ dados }) => {
-			console.log(dados);
 			setClientes(dados.clientes);
 		});
 	}, []);
@@ -36,7 +35,6 @@ export function ContainerCriarCobranca() {
 			<div className="containerCriarCobranca">
 				<form
 					onSubmit={handleSubmit(async (data) => {
-						console.log(data);
 						const idDoCliente = data.idDoCliente;
 						const descricao = data.descricao;
 						const valor = parseInt(data.valor);
@@ -53,7 +51,6 @@ export function ContainerCriarCobranca() {
 							token
 						)
 							.then(({ dados }) => {
-								console.log(dados);
 								alert("Cobrança criada");
 							})
 							.catch((err) => {
