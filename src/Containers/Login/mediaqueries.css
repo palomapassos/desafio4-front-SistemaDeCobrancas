@@ -1,0 +1,122 @@
+@media (max-width: 4000px) {
+	form {
+		margin-top: 4em;
+	}
+
+	label {
+		min-width: 20em;
+	}
+
+	input {
+		padding: 0.5em;
+	}
+
+	.botao {
+		margin-top: 3em;
+	}
+
+	.submit {
+		min-width: 10em;
+		max-height: 6em;
+	}
+
+	.cadastrar {
+		margin-top: 2em;
+	}
+
+	u {
+		font-size: 1ch;
+	}
+
+	.visibilidadeSenha {
+		position: absolute;
+		right: 0;
+		bottom: 2.5em;
+	}
+}
+
+@media (max-width: 450px) {
+	form {
+		margin-top: 4em;
+	}
+
+	label {
+		min-width: 15em;
+	}
+
+	input {
+		padding: 0.5em;
+	}
+
+	.botao {
+		margin-top: 3em;
+	}
+
+	.submit {
+		min-width: 10em;
+		min-height: 3em;
+	}
+
+	.cadastrar {
+		margin-top: 2em;
+	}
+
+	u {
+		font-size: 1ch;
+	}
+
+	.visibilidadeSenha {
+		position: absolute;
+		right: 0;
+		bottom: 2.5em;
+	}
+}
+
+@media (max-width: 300px) {
+	img {
+		max-width: 6em;
+		max-height: 6em;
+	}
+
+	form {
+		margin-top: 1.5em;
+	}
+
+	label {
+		min-width: 15em;
+		font-size: 1ch;
+	}
+
+	input {
+		padding: 0.025em;
+		font-size: 1.5ch;
+	}
+
+	.botao {
+		margin-top: 2em;
+	}
+
+	.submit {
+		min-width: 5em;
+		min-height: 2em;
+		font-size: 1.1ch;
+	}
+
+	.cadastrar {
+		margin-top: 1em;
+	}
+
+	u {
+		font-size: 0.8ch;
+	}
+
+	.visibilidadeSenha {
+		position: absolute;
+		right: 0;
+		bottom: 1.5em;
+	}
+
+	.visibilidadeSenha img {
+		max-width: 1.5em;
+	}
+}
