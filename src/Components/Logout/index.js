@@ -4,12 +4,26 @@ import userIcon from "../../Assets/user.png";
 import deslogarIcon from "../../Assets/logout.svg";
 import { LoginContainer } from "../../App";
 import { useHistory } from "react-router-dom";
+import { fazerRequisicoes } from "../../Utils/requisicoes";
 import "./styles.css";
 
 export function Logout(props) {
 	const [deslogar, setDeslogar] = React.useState(false);
-	const { logout } = LoginContainer.useContainer();
+	const { logout, token } = LoginContainer.useContainer();
+	const [relatorio, setRelatorio] = React.useState([]);
 	const history = useHistory();
+
+	React.useEffect(() => {
+		fazerRequisicoes(
+			"https://cubos-desafio-4.herokuapp.com/relatorios",
+			"GET",
+			undefined,
+			token
+		).then(({ dados }) => {
+			console.log(dados);
+			setRelatorio(dados);
+		});
+	}, []);
 
 	return (
 		<div className="containerLogout">
@@ -18,7 +32,8 @@ export function Logout(props) {
 					<img src={cifrao} alt="cifrão" /> Saldo em conta
 				</div>
 				<div>
-					R$ <span>0,00</span>
+					R${" "}
+					<span className="valorSaldo">{relatorio.saldoEmConta ?? "0,00"}</span>
 				</div>
 			</div>
 			<button
