@@ -1,0 +1,37 @@
+.botoes {
+	text-align: end;
+	margin-top: 2em;
+}
+
+.addCliente {
+	display: flex;
+	align-items: center;
+	min-width: 6em;
+	max-height: 4em;
+}
+
+.vazado {
+	background-color: transparent;
+	border-radius: 20px;
+	font-weight: 600;
+	font-size: 0.9em;
+	color: #da0175;
+	border: 1px solid #da0175;
+	margin: 0px 10px;
+	padding: 1em 3em;
+}
+
+.preenchido {
+	background-color: rgba(218, 1, 117, 0.35);
+	border-radius: 20px;
+	font-weight: 600;
+	font-size: 0.9em;
+	color: white;
+	border: none;
+	margin: 0px 10px;
+	padding: 1em 3em;
+}
+
+.preenchido:hover {
+	background-color: #da0175;
+}
