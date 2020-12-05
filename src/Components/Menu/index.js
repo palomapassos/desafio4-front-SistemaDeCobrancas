@@ -5,10 +5,15 @@ import pessoas from "../../Assets/iconPessoas.svg";
 import dinheiro from "../../Assets/iconDinheiro.svg";
 import "./styles.css";
 import "./mediaqueries.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { Button } from "../Button";
 import { useMediaQuery } from "../../Utils/getMediaquery.js";
 
 export function Menu() {
+	const history = useHistory();
+	function goToCriarCobranca() {
+		history.push("/criarCobranca");
+	}
 	const menorQue450px = useMediaQuery("(max-width: 450px)");
 	return (
 		<div className="containerMenu">
@@ -52,9 +57,13 @@ export function Menu() {
 					/>
 				</Link>
 			) : (
-				<Link className="buttonCobranca" to="/criarcobranca">
+				<Button
+					tipo="button"
+					classe="buttonCobranca"
+					aoClicar={goToCriarCobranca}
+				>
 					Criar Cobrança
-				</Link>
+				</Button>
 			)}
 		</div>
 	);
